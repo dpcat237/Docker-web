@@ -3,6 +3,7 @@ application:
   links:
     - mysql
     - mongo
+    - elasticsearch
     - redis
     - rabbitmq
   volumes:
@@ -22,6 +23,11 @@ mongo:
   image: mongo
   expose:
     - "27017"
+
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
 
 redis:
   image: redis
