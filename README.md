@@ -1,2 +1,2 @@
-# Docker-web
-Docker for web projects
+# Docker
+Docker container for frontend application
