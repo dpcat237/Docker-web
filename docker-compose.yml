@@ -1,0 +1,30 @@
+application:
+  build: application
+  links:
+    - mysql
+    - mongo
+    - redis
+    - rabbitmq
+  volumes:
+    - ./web:/var/www
+  environment:
+    TERM: xterm
+
+mysql:
+  image: tutum/mysql
+  expose:
+    - "3306"
+  environment:
+    MYSQL_USER: "root"
+    MYSQL_PASS: "root"
+
+mongo:
+  image: mongo
+  expose:
+    - "27017"
+
+redis:
+  image: redis
+
+rabbitmq:
+  image: rabbitmq
