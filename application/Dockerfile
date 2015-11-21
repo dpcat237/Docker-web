@@ -57,9 +57,10 @@ RUN ln -s `which nodejs` node
 RUN ln -s `which coffee` coffee
 RUN ln -s `which compass` compass
 
-#Apache
-RUN apt-get update && apt-get install -y apache2
-RUN rm -f /etc/apache2/sites-enabled/*
+#Nginx
+RUN apt-get update && apt-get install -y php5-fpm \
+RUN rm -f /etc/nginx/sites-enabled/*
+RUN mkdir /etc/nginx/ssl
 
 COPY Docker/copy/ /
 
